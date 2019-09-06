@@ -1,0 +1,99 @@
+{
+  "name": "acall",
+  "version": "0.0.0",
+  "description": "Utility function for asynchronous error handling",
+  "keywords": [
+    "async",
+    "utility",
+    "error"
+  ],
+  "author": "Ted Kesgar <t.kesgar@live.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkesgar/acall.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tkesgar/acall/issues"
+  },
+  "homepage": "https://github.com/tkesgar/acall#readme",
+  "scripts": {
+    "lint": "xo",
+    "format": "prettier --write '**/*.{js,ts,md}'",
+    "test": "jest",
+    "watch": "microbundle watch",
+    "build": "microbundle build",
+    "np": "np"
+  },
+  "main": "dist/acall.js",
+  "umd:main": "dist/acall.umd.js",
+  "module": "dist/acall.mjs",
+  "source": "src/acall.js",
+  "types": "acall.d.ts",
+  "files": [
+    "dist/",
+    "acall.d.ts"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/runtime": "^7.6.0",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.4",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.5",
+    "np": "^5.0.3",
+    "prettier": "1.18.2",
+    "xo": "^0.24.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "xo": {
+    "space": 2,
+    "extends": [
+      "plugin:prettier/recommended"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/**"
+        ],
+        "env": "jest"
+      }
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "proseWrap": "always"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "xo --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
