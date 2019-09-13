@@ -1,5 +1,8 @@
 # acall
 
+[![Build Status](https://travis-ci.org/tkesgar/acall.svg?branch=master)](https://travis-ci.org/tkesgar/acall)
+[![codecov](https://codecov.io/gh/tkesgar/acall/branch/master/graph/badge.svg)](https://codecov.io/gh/tkesgar/acall)
+
 > Utility function to avoid UnhandledPromiseRejection
 
 `acall` wraps an asynchronous function or Promise to redirect rejections to a
